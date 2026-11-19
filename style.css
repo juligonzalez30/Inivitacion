@@ -689,3 +689,65 @@ h1 span {
     max-width: 300px;
   }
 }
+
+/* ==================== EFECTO RASCA Y GANA ==================== */
+
+.scratch-photo {
+  position: relative;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+
+.scratch-photo .scratch-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.scratch-hint {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 24px);
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 100px;
+  background: rgba(100,40,63,.88);
+  color: #fffaf7;
+  font: 500 11px "Montserrat", sans-serif;
+  letter-spacing: .04em;
+  text-align: center;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(50,20,35,.15);
+  transition: opacity .25s ease;
+}
+
+.scratch-photo.is-revealed .scratch-hint {
+  opacity: 0;
+}
+
+@media (max-width: 650px) {
+  .scratch-hint {
+    bottom: 12px;
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+}
+
