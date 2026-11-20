@@ -837,3 +837,7 @@ h1 span {
 }
 
 
+/* Abeja mensajera temporalmente oculta */
+.bee-flight {
+    display: none;
+}
