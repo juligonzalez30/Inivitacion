@@ -751,3 +751,88 @@ h1 span {
   }
 }
 
+/* ==================== AJUSTE DE LEGIBILIDAD ==================== */
+/* Solo mejora la lectura de las tarjetas de fecha, dirección y festejo. */
+.detail-grid { gap: 18px; align-items: stretch; }
+.detail { padding: 30px 18px; min-height: 205px; border: 1px solid rgba(185,81,130,.13); border-radius: 14px; }
+.detail small { font-size: 10px; line-height: 1.5; letter-spacing: .14em; font-weight: 500; }
+.detail strong { font-size: clamp(23px, 2.2vw, 28px); line-height: 1.15; margin: 3px 0 5px; }
+.detail > span:last-child { font-size: 12px; line-height: 1.65; opacity: .85; margin-top: 8px; overflow-wrap: anywhere; }
+.detail .icon { font-size: 27px; margin-bottom: 14px; }
+@media (max-width: 650px) {
+  .detail { min-height: 0; padding: 25px 20px; }
+  .detail small { font-size: 10px; }
+  .detail strong { font-size: 25px; }
+  .detail > span:last-child { font-size: 13px; }
+}
+
+
+/* ==================== ABEJA MENSAJERA ==================== */
+/* Cartel a la izquierda, cordón en el medio y abeja a la derecha. */
+.bee-flight {
+  position: fixed;
+  z-index: 20;
+  top: 17%;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: max-content;
+  max-width: 94vw;
+  opacity: 1;
+  pointer-events: none;
+  animation: bee-fly-left-to-right 16s linear 2s infinite;
+}
+
+.bee-character {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  font-size: 38px;
+  line-height: 1;
+  filter: drop-shadow(0 3px 3px rgba(65,30,45,.16));
+  animation: bee-bob .55s ease-in-out infinite alternate;
+}
+
+.bee-trail {
+  width: 24px;
+  border-top: 2px dashed #c99545;
+  margin: 0 -2px;
+  flex: 0 0 24px;
+}
+
+.bee-banner {
+  display: block;
+  max-width: min(490px, 75vw);
+  padding: 13px 20px;
+  color: #702b45;
+  background: rgba(255,247,250,.97);
+  border: 1px solid rgba(185,81,130,.42);
+  border-radius: 14px 5px 5px 14px;
+  box-shadow: 0 8px 22px rgba(80,35,55,.13);
+  font: 500 13px/1.6 "Montserrat", sans-serif;
+  letter-spacing: .01em;
+}
+
+@keyframes bee-fly-left-to-right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100vw); }
+}
+
+@keyframes bee-bob {
+  from { margin-top: -4px; transform: scaleX(-1) rotate(5deg); }
+  to { margin-top: 4px; transform: scaleX(-1) rotate(-5deg); }
+}
+
+@media (max-width: 650px) {
+  .bee-flight { top: 12%; animation-duration: 19s; }
+  .bee-character { font-size: 30px; }
+  .bee-trail { width: 12px; flex-basis: 12px; }
+  .bee-banner { max-width: 72vw; padding: 10px 12px; font-size: 11px; line-height: 1.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bee-flight { animation: none; display: none; }
+  .bee-character { animation: none; }
+}
+
