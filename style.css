@@ -836,8 +836,4 @@ h1 span {
   .bee-character { animation: none; }
 }
 
-/* ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
-/* Abeja mensajera temporalmente oculta */
-.bee-flight {
-    display: flex;
-}
+
