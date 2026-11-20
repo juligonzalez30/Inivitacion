@@ -839,5 +839,5 @@ h1 span {
 /* ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
 /* Abeja mensajera temporalmente oculta */
 .bee-flight {
-    display: none;
+    display: flex;
 }
