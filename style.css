@@ -832,7 +832,16 @@ h1 span {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bee-flight { animation: none; display: none; }
-  .bee-character { animation: none; }
-}
+  .bee-flight {
+    animation: none !important;
+    display: flex !important;
+    opacity: 1;
+    left: 12px;
+    right: auto;
+    transform: none;
+  }
 
+  .bee-character {
+    animation: none;
+  }
+}
