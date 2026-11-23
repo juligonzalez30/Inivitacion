@@ -883,3 +883,31 @@ h1 span {
 @media (prefers-reduced-motion: reduce) {
   .today-message { animation: none; }
 }
+
+
+/* ==================== DÍA DEL EVENTO (portada) ==================== */
+.event-day[hidden] { display: none; }
+
+.event-day {
+  max-width: 520px;
+  margin: 28px auto 8px;
+  padding: 22px 18px;
+  background: rgba(255,247,250,.97);
+  border: 1px solid rgba(185,81,130,.42);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(80,35,55,.13);
+}
+
+.event-day-title {
+  margin: 0;
+  font: 700 clamp(34px, 10vw, 56px) "Cormorant Garamond", serif;
+  color: var(--wine);
+}
+
+.event-day-sub {
+  margin: 4px 0 0;
+  font: 500 14px "Montserrat", sans-serif;
+  color: #702b45;
+}
+
+.event-day .map-buttons { margin-top: 18px; }

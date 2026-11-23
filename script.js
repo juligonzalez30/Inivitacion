@@ -142,10 +142,10 @@
 
   if (cover.complete && cover.naturalWidth) drawCover();
 })();
-
+//Cambiar esto si cambia el horario 
 const targetDate = new Date("2026-11-27T09:00:00-03:00").getTime();
 // Fin del día del evento (medianoche en Argentina): después se muestra un agradecimiento
-const endOfEventDay = new Date("2026-11-28T00:00:00-03:00").getTime();
+const endOfEventDay = new Date("2026-11-27T12:00:00-03:00").getTime();
 
 function updateCountdown() {
   const now = Date.now();
@@ -153,13 +153,17 @@ function updateCountdown() {
   const timer = document.querySelector(".timer");
   const todayMsg = document.getElementById("today-message");
   const todayText = document.getElementById("today-text");
+  const eventDay = document.getElementById("eventDay");
+
+  // Botones de ubicación arriba de todo: solo el día del evento, ya terminada la cuenta
+  if (eventDay) eventDay.hidden = !(distance <= 0 && now < endOfEventDay);
 
   if (distance <= 0) {
     // La cuenta llegó a cero: ocultamos el contador y mostramos el cartel
     if (timer) timer.hidden = true;
     if (todayMsg) todayMsg.hidden = false;
     if (todayText) {
-      todayText.textContent = now < endOfEventDay ? "¡ES HOY!!" : "¡Gracias por acompañarme!";
+      todayText.textContent = now < endOfEventDay ? "¡¡ES HOY!!" : "¡Gracias por acompañarme!";
     }
     return;
   }
