@@ -831,13 +831,17 @@ h1 span {
   .bee-banner { max-width: 72vw; padding: 10px 12px; font-size: 11px; line-height: 1.5; }
 }
 
+/* Si el dispositivo tiene "reducir movimiento" activado (muy común en celulares
+   con ahorro de batería o accesibilidad), NO ocultamos la abeja: solo hacemos
+   el vuelo más lento y quitamos el balanceo. */
 @media (prefers-reduced-motion: reduce) {
   .bee-flight {
-    animation: none;
-    display: none;
+    animation-duration: 28s;
   }
 
   .bee-character {
     animation: none;
+    margin-top: 0;
+    transform: scaleX(-1);
   }
 }
