@@ -845,3 +845,41 @@ h1 span {
     transform: scaleX(-1);
   }
 }
+
+
+/* ==================== CARTEL "ES HOY" ==================== */
+.timer[hidden],
+.today-message[hidden] { display: none; }
+
+.today-message {
+  max-width: 650px;
+  margin: 40px auto 0;
+  padding: 28px 20px;
+  background: rgba(255,247,250,.97);
+  border: 1px solid rgba(185,81,130,.42);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(80,35,55,.13);
+  animation: today-pop 1.2s ease-in-out infinite alternate;
+}
+
+.today-message p {
+  margin: 0;
+  font: 700 clamp(38px, 11vw, 72px) "Cormorant Garamond", serif;
+  color: var(--wine);
+}
+
+.today-message small {
+  display: block;
+  margin-top: 8px;
+  font: 500 14px "Montserrat", sans-serif;
+  color: #702b45;
+}
+
+@keyframes today-pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .today-message { animation: none; }
+}

@@ -144,18 +144,28 @@
 })();
 
 const targetDate = new Date("2026-11-27T09:00:00-03:00").getTime();
+// Fin del día del evento (medianoche en Argentina): después se muestra un agradecimiento
+const endOfEventDay = new Date("2026-11-28T00:00:00-03:00").getTime();
 
 function updateCountdown() {
   const now = Date.now();
   const distance = targetDate - now;
+  const timer = document.querySelector(".timer");
+  const todayMsg = document.getElementById("today-message");
+  const todayText = document.getElementById("today-text");
 
   if (distance <= 0) {
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+    // La cuenta llegó a cero: ocultamos el contador y mostramos el cartel
+    if (timer) timer.hidden = true;
+    if (todayMsg) todayMsg.hidden = false;
+    if (todayText) {
+      todayText.textContent = now < endOfEventDay ? "¡ES HOY!!" : "¡Gracias por acompañarme!";
+    }
     return;
   }
+
+  if (timer) timer.hidden = false;
+  if (todayMsg) todayMsg.hidden = true;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
