@@ -143,7 +143,7 @@
   if (cover.complete && cover.naturalWidth) drawCover();
 })();
 
-const targetDate = new Date("2026-11-27T11:00:00-03:00").getTime();
+const targetDate = new Date("2026-11-27T09:00:00-03:00").getTime();
 
 function updateCountdown() {
   const now = Date.now();
