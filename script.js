@@ -143,7 +143,7 @@
   if (cover.complete && cover.naturalWidth) drawCover();
 })();
 //Cambiar esto si cambia el horario 
-const targetDate = new Date("2026-11-27T09:00:00-03:00").getTime();
+const targetDate = new Date("2026-11-27T10:00:00-03:00").getTime();
 // Fin del día del evento (medianoche en Argentina): después se muestra un agradecimiento
 const endOfEventDay = new Date("2026-11-27T12:00:00-03:00").getTime();
 
